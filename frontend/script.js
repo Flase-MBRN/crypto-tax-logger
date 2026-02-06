@@ -2,7 +2,7 @@
 // API CONFIGURATION
 // ==============================================
 
-const API_BASE_URL = 'https://mbrn-crypto-tax-logger.netlify.app/';
+const API_BASE_URL = 'https://crypto-tax-logger-clean.onrender.com';
 let AUTH_TOKEN = localStorage.getItem('auth_token') || null;
 
 // API Helper
