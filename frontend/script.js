@@ -2,7 +2,7 @@
 // API CONFIGURATION
 // ==============================================
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'https://mbrn-crypto-tax-logger.netlify.app/';
 let AUTH_TOKEN = localStorage.getItem('auth_token') || null;
 
 // API Helper
