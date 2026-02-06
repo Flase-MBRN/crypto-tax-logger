@@ -117,6 +117,24 @@ async def get_current_user(token: str = Depends(oauth2_scheme), db: Session = De
 
 # ========== FASTAPI APP ==========
 app = FastAPI(title="Crypto Tax Logger")
+# oben importieren
+from fastapi.middleware.cors import CORSMiddleware
+
+# nachdem `app = FastAPI(...)` steht, z.B.:
+origins = [
+    "https://mbrn-crypto-tax-logger.netlify.app",  # deine Netlify-URL
+    "https://www.mbrn-crypto-tax-logger.netlify.app",
+    "http://localhost:3000",
+    "http://127.0.0.1:5500",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,      # hier kannst du auch ["*"] temporär setzen
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # CORS - Hardcoded für Production
 ALLOWED_ORIGINS = [
